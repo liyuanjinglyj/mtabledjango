@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}游戏猎人数据图表显示{% endblock %}
+{% load static %}
+{% block content %}
+    <div align="center">
+        <form name="pie form" action="." method="get">
+            <table class="table-condensed">
+                {{ get_form.as_table }}
+            </table>
+            <br/><input type="submit" value="导出该月图表">
+        </form>
+        <br/><img src="{% static 'pictures/one.png' %}">
+    </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}游戏猎人数据比分比图显示{% endblock %}
+{% load static %}
+{% block content %}
+    <div align="center">
+        <form name="export form" action="." method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table class="table-condensed">
+                {{ get_form.as_table }}
+            </table>
+            <br/><input type="submit" value="获取数据" class="big_bar_button">
+        </form>
+        <br/>
+    {% if flag %}
+        <a href="download/" download="导出的数据表">下载导出的数据表</a>
+    {% endif %}
+    </div>
+{% endblock %}

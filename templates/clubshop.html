@@ -1,0 +1,10 @@
+﻿{% extends 'base.html' %}
+{% block title %}游戏猎人数据详情{% endblock %}
+{% load static %}
+{% block content %}
+    <ul class="list-group">
+    {% for key,value in result %}
+        <li class="list-group-item"><a href="{% static key %}">{{ value }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}

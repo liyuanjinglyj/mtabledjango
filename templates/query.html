@@ -1,0 +1,29 @@
+﻿{% extends 'base.html' %}
+{% block title %}游戏猎人数据图表显示{% endblock %}
+{% load static %}
+{% block content %}
+    <div align="center">
+        <form name="query form" action="." method="get">
+            <table class="table-condensed">
+                {{ get_form.as_table }}
+            </table>
+            <input type="submit" value="导出查询数据">
+        </form>
+    </div><br/>
+    <div class="row">
+            <table width="100%" class="table-condensed table-bordered">
+                {% for row in yxlr_data %}
+                    <tr>
+                        <td>{{ row.s_date }}</td>
+                        <td>{{ row.s_nameId }}</td>
+                        <td>{{ row.s_title }}</td>
+                        <td><a href="{{ row.s_url }}">{{ row.s_url }}</a> </td>
+                        <td>{{ row.s_count }}</td>
+                        <td>{{ row.s_comment }}</td>
+                        <td>{{ row.s_gaizhang }}</td>
+                        <td>{{ row.s_device }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+{% endblock %}
